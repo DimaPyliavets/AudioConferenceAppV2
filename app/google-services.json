@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "76717287511",
+    "firebase_url": "https://audiochat-cf946-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "audiochat-cf946",
+    "storage_bucket": "audiochat-cf946.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:76717287511:android:d3142ca1ba2623830c9b12",
+        "android_client_info": {
+          "package_name": "com.example.audiochat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "76717287511-m39078218ejperdndg4v5frlcb9ivlei.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnslV1gfmW_5iVMbXjbkmPXdQ2ZzNzTdo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "76717287511-m39078218ejperdndg4v5frlcb9ivlei.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:76717287511:android:faf262f8af7aab330c9b12",
+        "android_client_info": {
+          "package_name": "com.example.audioconferenceappv2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "76717287511-m39078218ejperdndg4v5frlcb9ivlei.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnslV1gfmW_5iVMbXjbkmPXdQ2ZzNzTdo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "76717287511-m39078218ejperdndg4v5frlcb9ivlei.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

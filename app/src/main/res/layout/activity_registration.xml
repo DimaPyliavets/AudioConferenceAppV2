@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorOnPrimary"
+    tools:context=".RegistrationActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/diamondviolet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:ignore="MissingConstraints">
+
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="350dp"
+            android:layout_height="70dp"
+            android:layout_margin="10dp"
+            android:autofillHints=""
+            android:background="@drawable/round_edittext"
+            android:drawableStart="@drawable/ic_baseline_person"
+            android:drawablePadding="14dp"
+            android:hint="@string/username"
+            android:inputType="text"
+            android:paddingStart="20dp"
+            android:paddingEnd="12dp"
+            app:met_floatingLabel="normal"
+            tools:ignore="TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:layout_margin="10dp"
+        android:autofillHints=""
+        android:background="@drawable/round_edittext"
+        android:drawableStart="@drawable/ic_baseline_mail"
+        android:drawablePadding="14dp"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:paddingStart="20dp"
+        android:paddingEnd="12dp"
+        app:met_floatingLabel="normal"
+        tools:ignore="TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:layout_margin="10dp"
+        android:autofillHints=""
+        android:background="@drawable/round_edittext"
+        android:drawableStart="@drawable/ic_baseline_key"
+        android:drawablePadding="14dp"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:paddingStart="20dp"
+        android:paddingEnd="12dp"
+        app:met_floatingLabel="normal"
+        tools:ignore="TextContrastCheck" />
+
+
+    <Button
+        android:id="@+id/reg_button"
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/round_btn"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/registration"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        tools:ignore="ContentDescription" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
