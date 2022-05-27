@@ -34,6 +34,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -57,7 +58,7 @@ public class MessageActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,29 +79,17 @@ public class MessageActivity extends AppCompatActivity {
         text_send = findViewById(R.id.text_send);
 
         intent = getIntent();
-        final String userid = intent.getStringExtra("userid");
+        String userid = intent.getStringExtra("userid");
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-
-        btn_send.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String msg = text_send.getText().toString();
-                if (!msg.equals("")){
-                    sendMessage(firebaseUser.getUid(), userid, msg);
-                } else {
-                    Toast.makeText(MessageActivity.this, "nie możesz wyslać pustego SMS ((( ",Toast.LENGTH_SHORT).show();
-                }
-                text_send.setText("");
-            }
-        });
-
         databaseReference = FirebaseDatabase.getInstance().getReference("users").child(userid);
+
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
+                assert user != null;
                 username.setText(user.getUsername());
-                if (user.getImageURL().equals("default")){
+                if (user.getImageURL().equals("default")) {
                     profile_image.setImageResource(R.drawable.ic_baseline_account_circle);
                 } else {
                     Glide.with(MessageActivity.this).load(user.getImageURL()).into(profile_image);
@@ -112,9 +101,22 @@ public class MessageActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError databaseError) {
             }
         });
+
+        btn_send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String msg = text_send.getText().toString();
+                if (!msg.equals("")) {
+                    sendMessage(firebaseUser.getUid(), userid, msg);
+                } else {
+                    Toast.makeText(MessageActivity.this, "nie możesz wyslać pustego SMS ((( ", Toast.LENGTH_SHORT).show();
+                }
+                text_send.setText("");
+            }
+        });
     }
 
-    private void sendMessage(String sender, String receiver, String message){
+    private void sendMessage(String sender, String receiver, String message) {
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
 
         HashMap<String, Object> HashMap = new HashMap<>();
@@ -124,7 +126,7 @@ public class MessageActivity extends AppCompatActivity {
         databaseReference.child("chats").push().setValue(HashMap);
     }
 
-    private void readMessages(final String myID, final String userID, final String imageUrl){
+    private void readMessages(final String myID, final String userID, final String imageUrl) {
         mChat = new ArrayList<>();
 
         databaseReference = FirebaseDatabase.getInstance().getReference("chats");
@@ -132,16 +134,18 @@ public class MessageActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 mChat.clear();
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     Chat chat = snapshot.getValue(Chat.class);
-                    if(chat.getReceiver().equals(myID) && chat.getSender().equals(userID) ||
-                            chat.getReceiver().equals(userID) && chat.getSender().equals(myID)){
+                    assert chat != null;
+                    if (chat.getReceiver().equals(myID) && chat.getSender().equals(userID) ||
+                            chat.getReceiver().equals(userID) && chat.getSender().equals(myID)) {
                         mChat.add(chat);
                     }
                     messageAdapter = new MessageAdapter(MessageActivity.this, mChat, imageUrl);
                     recyclerView.setAdapter(messageAdapter);
                 }
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
             }
@@ -157,10 +161,9 @@ public class MessageActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected (MenuItem item) {
-        switch (item.getItemId()){
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
             case R.id.call:
-
                 return true;
         }
         return false;

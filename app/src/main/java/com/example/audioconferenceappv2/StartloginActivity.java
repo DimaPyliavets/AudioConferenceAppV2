@@ -44,7 +44,6 @@ public class StartloginActivity extends AppCompatActivity {
 
         checkUser();
 
-        //Verhnia panel
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");
@@ -61,7 +60,6 @@ public class StartloginActivity extends AppCompatActivity {
         progressDialog.setMessage("LogIn");
         progressDialog.setCanceledOnTouchOutside(false);
 
-        //Vydilenyj tekst
         SpannableString spannableString = new SpannableString("click here");
         ClickableSpan span = new ClickableSpan() {
             @Override
@@ -132,7 +130,6 @@ public class StartloginActivity extends AppCompatActivity {
             finish();
         }
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

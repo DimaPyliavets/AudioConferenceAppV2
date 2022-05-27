@@ -18,21 +18,17 @@
     <string name="exit">Exit</string>
     <string name="change_theme">Change Theme</string>
     <string name="confirm_random_text">confirm RANDOM TEXT</string>
-    <string name="enter_to_your_account">log in to your account</string>
+    <string name="enter_to_your_account">Log in to your account</string>
     <string name="click_here">click here</string>
     <string name="if_you_do_not_have_an_account">If you do not have an account</string>
     <string name="profile">profile</string>
     <string name="string_profile">profile</string>
-    <string name="profile_info">profile_info</string>
+    <string name="profile_info">Profile Info</string>
     <string name="log_out">Log out</string>
     <string name="send">send</string>
-    <string name="title_activity_main2">MainActivity2</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="create_your_account">Create your account</string>
+    <string name="save">Save</string>
+    <string name="reset">Reset</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
 </resources>

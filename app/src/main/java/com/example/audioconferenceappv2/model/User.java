@@ -2,7 +2,7 @@ package com.example.audioconferenceappv2.model;
 
 public class User {
 
-    private static String id;
+    String id;
     String email;
     String username;
     String imageURL;
@@ -15,7 +15,6 @@ public class User {
     }
 
     public User(){ }
-
 
     public String getId() {
         return id;
@@ -45,7 +44,7 @@ public class User {
         return email;
     }
 
-    public void setEmail(String id) {
+    public void setEmail(String email) {
         this.email = email;
     }
 }

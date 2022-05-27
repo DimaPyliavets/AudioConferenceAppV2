@@ -8,22 +8,24 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_diamons_logo"
+        android:icon="@drawable/ic_diamons_logo_app"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/ic_back"
+        android:roundIcon="@drawable/ic_back_app"
         android:supportsRtl="true"
         android:theme="@style/Theme.AudioChat">
         <activity
-            android:name=".MainActivity2"
+            android:name=".UserInfoActivity"
             android:exported="false"
-            android:label="@string/title_activity_main2"
-            android:theme="@style/Theme.AudioChat.NoActionBar" />
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".CallActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".MessageActivity"
             android:exported="false"
@@ -42,7 +44,6 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -52,10 +53,8 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

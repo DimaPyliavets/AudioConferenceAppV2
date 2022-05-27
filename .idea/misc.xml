@@ -3,30 +3,53 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2365" />
+        <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/drawable/ic_back.xml" value="0.2365" />
+        <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/drawable/ic_back_app.xml" value="0.2365" />
+        <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/drawable/ic_baseline_account_circle.xml" value="0.2365" />
+        <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/drawable/ic_baseline_add_circle.xml" value="0.2365" />
+        <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/drawable/ic_baseline_arrow_back.xml" value="0.2365" />
+        <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/drawable/ic_baseline_calendar_month.xml" value="0.2365" />
+        <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/drawable/ic_baseline_call.xml" value="0.2365" />
+        <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/drawable/ic_baseline_chat.xml" value="0.2365" />
+        <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/drawable/ic_baseline_groups.xml" value="0.2365" />
+        <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/drawable/ic_diamons_logo.xml" value="0.2365" />
+        <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/drawable/ic_diamons_logo_app.xml" value="0.2365" />
+        <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2365" />
         <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/drawable/round_btn.xml" value="0.25" />
         <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/drawable/round_btn2.xml" value="0.25" />
+        <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/drawable/round_btn_red.xml" value="0.2365" />
         <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/drawable/round_edittext.xml" value="0.25" />
         <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/layout/activity_call.xml" value="0.3494791666666667" />
-        <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/layout/activity_main.xml" value="0.36302083333333335" />
+        <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/layout/activity_main2.xml" value="0.36302083333333335" />
+        <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/layout/activity_main3.xml" value="0.36302083333333335" />
         <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/layout/activity_message.xml" value="0.33" />
-        <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/layout/activity_registration.xml" value="0.33" />
+        <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/layout/activity_registration.xml" value="0.22" />
         <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/layout/activity_splash_screen.xml" value="0.31145833333333334" />
-        <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/layout/activity_startlogin.xml" value="0.36302083333333335" />
+        <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/layout/activity_startlogin.xml" value="0.25" />
+        <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/layout/activity_user_info.xml" value="0.33" />
         <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/layout/bar_layout.xml" value="0.36302083333333335" />
         <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/layout/bar_layout_oparcity.xml" value="0.36302083333333335" />
         <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/layout/chat_item_left.xml" value="0.36302083333333335" />
-        <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/layout/chat_item_right.xml" value="0.36302083333333335" />
+        <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/layout/chat_item_right.xml" value="0.33" />
+        <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/layout/content_main.xml" value="0.36302083333333335" />
+        <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/layout/content_main2.xml" value="0.36302083333333335" />
+        <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/layout/custom_dialog.xml" value="0.36302083333333335" />
         <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/layout/fragment_chat.xml" value="0.36302083333333335" />
         <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/layout/fragment_first.xml" value="0.36302083333333335" />
         <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/layout/fragment_friends.xml" value="0.36302083333333335" />
+        <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/layout/fragment_second.xml" value="0.36302083333333335" />
+        <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/layout/fragment_settings.xml" value="0.18" />
+        <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/layout/main_activity_custom_bar.xml" value="0.36302083333333335" />
         <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/layout/ui_mode.xml" value="0.36302083333333335" />
         <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/layout/user_item.xml" value="0.36302083333333335" />
-        <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/layout/user_messege_item.xml" value="0.5032397408207343" />
+        <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/layout/user_messege_item.xml" value="0.33" />
         <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/menu/menu_calendar.xml" value="0.36302083333333335" />
         <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/menu/menu_chat.xml" value="0.36302083333333335" />
         <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/menu/menu_mainpage.xml" value="0.5" />
         <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/menu/menu_startactivity.xml" value="0.33" />
+        <entry key="..\:/android-ios/AudioConferenceAppV2/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2365" />
       </map>
     </option>
   </component>
