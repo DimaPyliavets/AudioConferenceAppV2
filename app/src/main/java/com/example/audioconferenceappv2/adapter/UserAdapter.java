@@ -21,8 +21,8 @@ import com.example.audioconferenceappv2.model.User;
 import java.util.List;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
-    private Context mContext;
-    private List<User> mUsers;
+    private final Context mContext;
+    private final List<User> mUsers;
 
     ImageButton call_img_BTN;
     ImageButton txt_img_BTN;

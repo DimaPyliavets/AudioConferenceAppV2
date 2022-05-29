@@ -1,5 +1,6 @@
 package com.example.audioconferenceappv2;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
+@SuppressLint("CustomSplashScreen")
 public class SplashScreen extends Activity {
 
 

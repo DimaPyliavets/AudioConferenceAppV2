@@ -19,8 +19,8 @@ import com.example.audioconferenceappv2.model.User;
 import java.util.List;
 
 public class UserChatAdapter extends RecyclerView.Adapter<UserChatAdapter.ViewHolder> {
-    private Context mContext;
-    private List<User> mUsers;
+    private final Context mContext;
+    private final List<User> mUsers;
 
     public UserChatAdapter (Context mContext, List<User> mUsers){
         this.mContext = mContext;
@@ -31,7 +31,7 @@ public class UserChatAdapter extends RecyclerView.Adapter<UserChatAdapter.ViewHo
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(mContext).inflate(R.layout.user_messege_item, parent, false);
-        return new UserChatAdapter.ViewHolder(view);
+        return new ViewHolder(view);
     }
 
     @Override
@@ -61,7 +61,7 @@ public class UserChatAdapter extends RecyclerView.Adapter<UserChatAdapter.ViewHo
         return mUsers.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public static class ViewHolder extends RecyclerView.ViewHolder{
 
         public TextView username;
         public ImageView profile_image;

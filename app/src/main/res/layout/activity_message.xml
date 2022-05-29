@@ -23,11 +23,6 @@
             android:background="@color/diamondviolet"
             android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:id="@+id/profile_image"
-                android:src="@drawable/ic_baseline_account_circle" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -83,7 +78,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_centerVertical="true"
-            android:layout_toLeftOf="@+id/btn_send"
+            android:layout_toStartOf="@+id/btn_send"
             android:autofillHints=""
             android:background="@color/colorOnPrimary"
             android:hint="Write SMS..."

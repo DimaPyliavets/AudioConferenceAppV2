@@ -1,5 +1,6 @@
 package com.example.audioconferenceappv2;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,7 +16,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.example.audioconferenceappv2.model.User;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
@@ -23,15 +23,14 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class RegistrationActivity extends AppCompatActivity {
 
     private EditText username, email, password;
-    private Button registr_btn;
 
     private ProgressDialog progressDialog;
 
@@ -39,7 +38,6 @@ public class RegistrationActivity extends AppCompatActivity {
     FirebaseUser firebaseUser;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
-    FirebaseFirestore firebaseFirestore;
 
 
     @Override
@@ -52,7 +50,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,7 +62,7 @@ public class RegistrationActivity extends AppCompatActivity {
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         username = findViewById(R.id.username);
-        registr_btn = findViewById(R.id.reg_button);
+        Button registr_btn = findViewById(R.id.reg_button);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -112,7 +110,7 @@ public class RegistrationActivity extends AppCompatActivity {
                         String userid = firebaseUser.getUid();
 
                         firebaseDatabase = FirebaseDatabase.getInstance();
-                        databaseReference = firebaseDatabase.getReference("users").child(userid);;
+                        databaseReference = firebaseDatabase.getReference("users").child(userid);
                         Map<String,Object> User = new HashMap<>();
                         User.put("id", userid);
                         User.put("email", txt_email);
@@ -145,19 +143,16 @@ public class RegistrationActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected (MenuItem item) {
         switch (item.getItemId()){
             case R.id.exit_menu_btn:
-
-                System.exit(1);
+                System.exit(0);
                 break;
             case R.id.cl_menu_btn:
-                break;
-
             case R.id.ct_menu_btn:
                 break;
-
         }
         return super.onOptionsItemSelected(item);
     }

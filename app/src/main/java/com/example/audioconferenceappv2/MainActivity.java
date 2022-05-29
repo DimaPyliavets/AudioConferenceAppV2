@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -32,13 +31,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainActivity extends AppCompatActivity {
-
-    private TabLayout tabLayout;
-    private ViewPager viewPager;
 
     ImageView profile_image;
     TextView username;
@@ -62,12 +58,12 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("");
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-        tabLayout = findViewById(R.id.reg_tab_layout);
-        viewPager = findViewById(R.id.view_pager);
+        TabLayout tabLayout = findViewById(R.id.reg_tab_layout);
+        ViewPager viewPager = findViewById(R.id.view_pager);
 
         profile_image = findViewById(R.id.profile_image);
         username = findViewById(R.id.username_text);
@@ -85,9 +81,9 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(viewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
 
-        tabLayout.getTabAt(0).setIcon(R.drawable.ic_baseline_chat);
-        tabLayout.getTabAt(1).setIcon(R.drawable.ic_baseline_groups);
-        tabLayout.getTabAt(2).setIcon(R.drawable.ic_baseline_settings);
+        Objects.requireNonNull(tabLayout.getTabAt(0)).setIcon(R.drawable.ic_baseline_chat);
+        Objects.requireNonNull(tabLayout.getTabAt(1)).setIcon(R.drawable.ic_baseline_groups);
+        Objects.requireNonNull(tabLayout.getTabAt(2)).setIcon(R.drawable.ic_baseline_settings);
 
     }
 
@@ -125,10 +121,10 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    class ViewPagerAdapter extends FragmentPagerAdapter {
+    static class ViewPagerAdapter extends FragmentPagerAdapter {
 
-        private ArrayList<Fragment> fragmentArrayList;
-        private ArrayList<String> fragmentTitle;
+        private final ArrayList<Fragment> fragmentArrayList;
+        private final ArrayList<String> fragmentTitle;
 
         public ViewPagerAdapter(FragmentManager fm) {
             super(fm);
@@ -136,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
             this.fragmentTitle = new ArrayList<>();
         }
 
+        @NonNull
         @Override
         public Fragment getItem(int position) {
             return fragmentArrayList.get(position);
@@ -166,13 +163,12 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected (MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.logout_menu_btn:
-                FirebaseAuth.getInstance().signOut();
-                checkUser();
-                startActivity(new Intent(MainActivity.this, StartloginActivity.class));
-                finish();
-                return true;
+        if (item.getItemId() == R.id.logout_menu_btn) {
+            FirebaseAuth.getInstance().signOut();
+            checkUser();
+            startActivity(new Intent(MainActivity.this, StartloginActivity.class));
+            finish();
+            return true;
         }
         return false;
     }

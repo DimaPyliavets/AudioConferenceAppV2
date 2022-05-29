@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.audioconferenceappv2.R;
 import com.example.audioconferenceappv2.model.Chat;
+import com.example.audioconferenceappv2.model.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -22,40 +23,34 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
 
     public static final int MSG_TYPE_LEFT = 1;
     public static final int MSG_TYPE_RIGHT = 2;
-    private Context mContext;
-    private List<Chat> mChat;
-    private String imageurl;
+    private final Context mContext;
+    private final List<Chat> mChat;
+
 
     FirebaseUser firebaseUser;
 
-    public MessageAdapter (Context mContext, List<Chat> mChat, String imageUrl){
+    public MessageAdapter (Context mContext, List<Chat> mChat){
         this.mContext = mContext;
         this.mChat = mChat;
-        this.imageurl = imageUrl;
+
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view;
         if (viewType == MSG_TYPE_RIGHT) {
-            View view = LayoutInflater.from(mContext).inflate(R.layout.chat_item_right, parent, false);
-            return new MessageAdapter.ViewHolder(view);
+            view = LayoutInflater.from(mContext).inflate(R.layout.chat_item_right, parent, false);
         } else {
-            View view = LayoutInflater.from(mContext).inflate(R.layout.chat_item_left, parent, false);
-            return new MessageAdapter.ViewHolder(view);
+            view = LayoutInflater.from(mContext).inflate(R.layout.chat_item_left, parent, false);
         }
+        return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MessageAdapter.ViewHolder holder, int position) {
         Chat chat = mChat.get(position);
         holder.show_message.setText(chat.getMessage());
-        /*
-        if (imageurl.equals("default")){
-            holder.profile_image.setImageResource(R.drawable.ic_baseline_account_circle);
-        } else {
-            Glide.with(mContext).load(imageurl).into(holder.profile_image);
-        }*/
     }
 
     @Override
@@ -63,7 +58,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
         return mChat.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public static class ViewHolder extends RecyclerView.ViewHolder{
 
         public TextView show_message;
         public ImageView profile_image;

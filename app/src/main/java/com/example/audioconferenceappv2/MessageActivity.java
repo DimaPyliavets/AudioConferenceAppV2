@@ -89,11 +89,6 @@ public class MessageActivity extends AppCompatActivity {
                 User user = dataSnapshot.getValue(User.class);
                 assert user != null;
                 username.setText(user.getUsername());
-                if (user.getImageURL().equals("default")) {
-                    profile_image.setImageResource(R.drawable.ic_baseline_account_circle);
-                } else {
-                    Glide.with(MessageActivity.this).load(user.getImageURL()).into(profile_image);
-                }
                 readMessages(firebaseUser.getUid(), userid, user.getImageURL());
             }
 
@@ -141,7 +136,7 @@ public class MessageActivity extends AppCompatActivity {
                             chat.getReceiver().equals(userID) && chat.getSender().equals(myID)) {
                         mChat.add(chat);
                     }
-                    messageAdapter = new MessageAdapter(MessageActivity.this, mChat, imageUrl);
+                    messageAdapter = new MessageAdapter(MessageActivity.this, mChat);
                     recyclerView.setAdapter(messageAdapter);
                 }
             }

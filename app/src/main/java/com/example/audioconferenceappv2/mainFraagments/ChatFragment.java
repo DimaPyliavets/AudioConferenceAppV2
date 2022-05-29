@@ -57,6 +57,7 @@ public class ChatFragment extends Fragment {
                 for(DataSnapshot snapshot : dataSnapshot.getChildren()){
                     Chat chat = snapshot.getValue(Chat.class);
 
+                    assert chat != null;
                     if(chat.getSender().equals(firebaseUser.getUid())){
                         usersList.add(chat.getReceiver());
                     }
@@ -90,6 +91,7 @@ public class ChatFragment extends Fragment {
                     User user = snapshot.getValue(User.class);
 
                     for (String id : usersList){
+                        assert user != null;
                         if(user.getId().equals(id)){
                             if(mUser.size() != 0){
                                 for (User user1 : mUser){

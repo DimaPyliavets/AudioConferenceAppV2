@@ -1,5 +1,6 @@
 package com.example.audioconferenceappv2;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,11 +27,11 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.Objects;
+
 public class StartloginActivity extends AppCompatActivity {
 
     private EditText email, password;
-    private Button login_btn;
-    private TextView registration_text;
 
     private ProgressDialog progressDialog;
 
@@ -46,12 +47,12 @@ public class StartloginActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("");
 
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
-        login_btn = findViewById(R.id.login_button);
-        registration_text = findViewById(R.id.clickable_text);
+        Button login_btn = findViewById(R.id.login_button);
+        TextView registration_text = findViewById(R.id.clickable_text);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -72,12 +73,7 @@ public class StartloginActivity extends AppCompatActivity {
         registration_text.setText(spannableString);
         registration_text.setMovementMethod(LinkMovementMethod.getInstance());
 
-        login_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                validateData();;
-            }
-        });
+        login_btn.setOnClickListener(view -> validateData());
     }
 
     private void validateData() {
@@ -137,6 +133,7 @@ public class StartloginActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected (MenuItem item) {
         switch (item.getItemId()){
@@ -145,8 +142,6 @@ public class StartloginActivity extends AppCompatActivity {
                 System.exit(1);
                 break;
             case R.id.cl_menu_btn:
-
-                break;
             case R.id.ct_menu_btn:
 
                 break;
