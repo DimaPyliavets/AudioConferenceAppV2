@@ -20,6 +20,6 @@
         android:id="@+id/show_message"
         android:textSize="15sp"
         android:padding="10dp"
-        android:background="@color/diamondviolet"/>
+        android:background="@color/diamond_violet"/>
 
 </RelativeLayout>

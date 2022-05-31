@@ -27,6 +27,8 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     ImageButton call_img_BTN;
     ImageButton txt_img_BTN;
 
+
+
     public UserAdapter (Context mContext, List<User> mUsers){
         this.mContext = mContext;
         this.mUsers = mUsers;
@@ -56,18 +58,12 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
                 Intent intent = new Intent(mContext, MessageActivity.class);
                 intent.putExtra("userid", user.getId());
                 mContext.startActivity(intent);
+
             }
         });
-
-        /*txt_img_BTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(mContext, MessageActivity.class);
-                intent.putExtra("userid", user.getId());
-                mContext.startActivity(intent);
-            }
-        });*/
     }
+
+
 
     @Override
     public int getItemCount() {

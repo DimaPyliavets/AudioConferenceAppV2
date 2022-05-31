@@ -91,7 +91,7 @@ public class ChatFragment extends Fragment {
                     User user = snapshot.getValue(User.class);
 
                     for (String id : usersList){
-                        assert user != null;
+                       assert user != null;
                         if(user.getId().equals(id)){
                             if(mUser.size() != 0){
                                 for (User user1 : mUser){

@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.AudioChat" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/diamondviolet</item>
-        <item name="colorPrimaryVariant">@color/diamondviolet</item>
+        <item name="colorPrimary">@color/diamond_violet</item>
+        <item name="colorPrimaryVariant">@color/diamond_violet</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>

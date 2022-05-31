@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Diamond Chat</string>
+    <string name="diamond_chat">Diamond Chat</string>
+    <string name="start">Старт</string>
+    <string name="log_in">Авторизація</string>
+    <string name="registration">Реєстрація</string>
+    <string name="login">Авторизація</string>
+    <string name="username">Нік</string>
+    <string name="password">Пароль</string>
+    <string name="email">Емейл</string>
+    <string name="confirm_password">Підтвердити пароль</string>
+    <string name="chat">Чат</string>
+    <string name="friends">Друзі</string>
+    <string name="settings">Налаштування</string>
+    <string name="change_language">Змінити мову</string>
+    <string name="exit">Вихід</string>
+    <string name="change_theme">Змінити тему</string>
+    <string name="confirm_random_text">підтвердити ВИПАДКОВИЙ ТЕКСТ</string>
+    <string name="enter_to_your_account">Авторизація до свого акаунта</string>
+    <string name="click_here">натисни тут</string>
+    <string name="if_you_do_not_have_an_account">Якщо не маєш акаунта</string>
+    <string name="profile_info">Інфо про акаунт</string>
+    <string name="log_out">Вийти з системи</string>
+    <string name="send">надіслати</string>
+    <string name="create_your_account">Створити профіль</string>
+    <string name="save">Зберегти</string>
+    <string name="reset">Скинути</string>
+    <string name="delete">Видалити</string>
+    <string name="edit">Редактувати</string>
+</resources>
