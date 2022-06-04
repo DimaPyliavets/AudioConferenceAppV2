@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -32,6 +33,9 @@ public class UserChatAdapter extends RecyclerView.Adapter<UserChatAdapter.ViewHo
     private final List<User> mUsers;
 
     String lastMSG;
+
+    ImageButton txtBTN;
+    ImageButton callBTN;
 
     public UserChatAdapter (Context mContext, List<User> mUsers){
         this.mContext = mContext;
