@@ -31,6 +31,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Objects;
 
 
@@ -171,5 +172,29 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         return false;
+    }
+
+
+    private void status(String status) {
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("users").child(firebaseUser.getUid());
+
+        HashMap<String, Object> hashMap = new HashMap<>();
+        hashMap.put("status", status);
+
+        databaseReference.updateChildren(hashMap);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        status("online");
+    }
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        status("offline");
     }
 }

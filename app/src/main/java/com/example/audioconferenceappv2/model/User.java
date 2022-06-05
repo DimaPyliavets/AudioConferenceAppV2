@@ -6,12 +6,14 @@ public class User {
     String email;
     String username;
     String imageURL;
+    String status;
 
-    public User(String id, String username, String imageURL, String email) {
+    public User(String id, String username, String imageURL, String email, String status) {
         this.id = id;
         this.username = username;
         this.imageURL = imageURL;
         this.email = email;
+        this.status = status;
     }
 
     public User(){ }
@@ -46,5 +48,13 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
